@@ -69,6 +69,19 @@
                tag:atag                                                 \
             format:(frmt), ##__VA_ARGS__]
 
+/* Macros to be used when we have  a prepared va_list.  */
+#define LOG_MACRO_VA_LIST(isAsynchronous, lvl, flg, ctx, atag, fnct, frmt, arg) \
+        [DDLog log:isAsynchronous                                        \
+            level:lvl                                                    \
+            flag:flg                                                     \
+            context:ctx                                                  \
+            file:__FILE__                                                \
+            function:fnct                                                \
+            line:__LINE__                                                \
+            tag:atag                                                     \
+            format:(frmt)                                                \
+            args:(arg)]
+
 /**
  * Define the Objective-C and C versions of the macro.
  * These automatically inject the proper function name for either an objective-c method or c function.
